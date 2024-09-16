@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop View](./design/desk_des.jpgscreenshot.jpg)
+![Desktop View](./design/desk_des.jpg)
 
 ![Mobile View](./design/mobile_des.jpg)
 
