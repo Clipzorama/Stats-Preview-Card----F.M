@@ -1,0 +1,194 @@
+/* font-family: "Inter", sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* font-family: "Lexend Deca", sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+}
+
+:root {
+    /* Primary */
+
+    /* (main background) */
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    /* (card background) */
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    /* (accent) */
+    --Soft-violet: hsl(277, 64%, 61%);
+
+    /* Neutral */
+
+    /* (main heading, stats) */
+    --White: hsl(0, 0%, 100%);
+    /* (main paragraph) */
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    /* (stat headings) */
+    --SH-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    background-color: var(--Very-dark-blue);
+}
+
+
+.all-content {
+    background-color: var(--Very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+.card {
+    background-color: var(--Dark-desaturated-blue);
+    display: flex;
+    border-radius: 10px;
+    max-width: 1120px;
+    overflow: hidden;
+    /* For image to respect border-radius */
+    height: auto;
+
+}
+
+.info {
+    padding: 73px 73px 0 73px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: var(--White);
+    font-size: 2.26rem;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.08rem;
+}
+
+h2>span {
+    color: var(--Soft-violet);
+}
+
+.details {
+    color: var(--SH-transparent-white);
+    font-family: "Inter", sans-serif;
+    margin-top: 26px;
+    line-height: 1.5rem;
+    font-size: 14.5px;
+    width: 40ch;
+    letter-spacing: 0.02rem;
+}
+
+.stat-container {
+    display: flex;
+    margin-top: 73px;
+    justify-content: space-between;
+    width: 82%;
+}
+
+.stat-item {
+    margin: 0;
+}
+
+.stat-number {
+    color: var(--White);
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.06rem;
+}
+
+.stat-detail {
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 6px;
+    text-transform: uppercase;
+    color: var(--SH-transparent-white);
+    font-size: 0.75rem;
+    letter-spacing: 0.06rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+/* Basically just covering the image with the background color --> same as span. */
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Soft-violet);
+    /* Soft-violet color overlay */
+    mix-blend-mode: multiply;
+    /* Blend the violet color with the black-and-white image */
+    opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .all-content {
+        flex-direction: column;
+
+    }
+
+    .card {
+        width: 85%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 16ch;
+    }
+
+    .stat-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .stat-item:not(:last-of-type) {
+        margin-bottom: 30px;
+    }
+
+    .details {
+        text-align: center;
+        width: 30ch;
+        margin-top: 13px;
+    }
+
+    .image-container {
+        /* To make image on the top */
+        order: -1;
+        width: 100%;
+    }
+
+    .design {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .info {
+        padding: 40px 15px 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .attribution {
+        position: relative;
+        bottom: 50px;
+    }
+
+}
